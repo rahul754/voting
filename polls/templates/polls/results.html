@@ -1,0 +1,10 @@
+<h1>Result of <i>{{poll.question}}</i></h1>
+<table border="1">
+<tbody>
+<tr><th>Choice</th><th>Votes</th></tr>
+{% for choice in poll.choice_set.all %}
+	<tr><td>{{choice.choice_text}}</td><td>{{choice.votes}}</td></tr>
+{% endfor %}
+</tbody>
+</table>
+<a href="{% url 'polls:index' %}"><< Back to polls.</a>
